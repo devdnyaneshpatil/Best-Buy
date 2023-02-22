@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        #nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1E88E5;
+            padding-right: 20px;
+        } 
+        #nav>div{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px;
+            color: white;
+        }
+        #logo{
+            width: 100%;
+            height: 70px;
+        }
+        #aiea{
+            text-decoration: none;
+            color: white;
+        }
+        #cart{
+            text-decoration: none;
+            color: white; 
+        }
+        #header{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color:#1E88E5 ;
+            margin: 1px;
+        }
+        #topdeal{
+            text-decoration: none;
+            color: white;
+        }
+        #login{
+            text-decoration: none;
+            color: white;
+        }
+        #saved{
+            text-decoration: none;
+            color: white;
+        }
+        #product-container{
+        /* border: 2px solid red; */
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        
+      }
+      #product-container>div{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 20px;
+        text-align: center;
+
+      }
+      #product-container>div>img{
+        width: 100%;
+      }
+      #product-container>div>button{
+        display: block;
+        margin: auto
+      }
+      #filter{
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      .nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+
+        
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div id="right">
+            <img src="./image/x.jpg" alt="" id="logo">
+            <h1>menu</h1>
+            <!-- <input type="text" name="" id="search"> -->
+            <select id="filter">
+                <option value="">Filter By Category</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Speakers">Speakers</option>
+              </select>
+        </div>
+
+        <div id="left">
+            <a href="aiea.html" id="aiea">Aiea</a>
+            <a href="cart.html" id="cart">Cart</a>
+        </div>
+    </div>
+    <div>
+        <div id="header">
+            <a href="topdeals.html" id="topdeal">top deals</a>
+            <a href="login.html" id="login">account</a>
+            <a href="saveditems.html" id="saved">saved items</a>
+        </div>
+    </div>
+
+    <!-- bodypart goes here -->
+    <div id="cont">
+        
+    </div>
+    
+    <div id="product-container">
+        <!-- Here Append All the Products  -->
+      </div>
+</body>
+<script>
+     const url='https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products'
+
+async function fetchData(){
+  try {
+    let res=await fetch(url)
+    res=await res.json()
+    // console.log(res.data)
+    filterData(res.data)
+  } catch (error) {
+    console.log('error',error)
+  }
+}
+ 
+fetchData()
+let filterby=document.getElementById('filter')
+filterby.addEventListener('change',()=>{
+  fetchData()
+})
+function filterData(data){
+ if(filterby.value==""){
+  displayData(data)
+ }else{
+  data=data.filter((ele)=>{
+    return ele.category==filterby.value
+  })
+  displayData(data)
+ }
+}
+
+   let Cart=JSON.parse(localStorage.getItem('cart'))||[]
+
+ let container=document.getElementById('product-container')
+function displayData(data){
+   container.innerHTML=''
+  data.forEach((ele)=>{
+    let card=document.createElement('div')
+
+    let image=document.createElement('img')
+    let brand=document.createElement('h2')
+    let category=document.createElement('h4')
+    let price=document.createElement('h3')
+    let detail=document.createElement('p')
+    let addtocart=document.createElement('button')
+
+    image.setAttribute('src',ele.img)
+    brand.innerText=ele.brand
+    category.innerText=ele.category
+    price.innerText='₹'+ele.price
+    detail.innerText=ele.details
+    addtocart.innerText='Add To Cart'
+
+    addtocart.addEventListener('click',()=>{
+      if(checkDuplicate(ele)){
+        alert('Product Aready In The Cart')
+      }else{
+        Cart.push({...ele,quantity:1})
+        localStorage.setItem('cart',JSON.stringify(Cart))
+        alert('Product Added To Cart')
+      }
+    })
+
+    card.append(image,brand,price,detail,category,addtocart)
+    container.append(card)
+
+  })
+  console.log('display',data)
+}
+
+function checkDuplicate(ele){
+   for(let i=0; i<Cart.length; i++){
+    if(Cart[i].id==ele.id){
+      return true
+    }
+   }
+  return false
+}
+
+
+let productdata=[
+    {
+        image:'',
+        brand:Apple,
+        category:mobile,
+        title:  '',
+    }
+]
+</script>
+</html>
