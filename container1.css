@@ -1,0 +1,106 @@
+#container1{
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+}
+.backgroundImgDiv{
+    background-image: url(https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-646602-ghp-secondary-lv2-74025e02-4ef8-4208-8b7d-b84ea357f384.jpg;maxHeight=600;maxWidth=600);
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 600px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+.backgroundImgDiv h1{
+    padding-top: 70px;
+    margin-bottom: 5px;
+}
+.backgroundImgDiv a{
+    text-decoration: none;
+    color: white;
+}
+.backgroundImgDiv button{
+    background-color: #0046be;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    margin-top: 15px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.container1Div1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    border: 1px solid gray;
+    padding:0px 10px 0px 50px ;
+}
+.container1Div1>div{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid red; */
+    width: 800px;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding: 10px 0px 10px 0px ; */
+    /* margin-left: 50px; */
+}
+.container1Div1>div div{
+    width: 200px;
+    margin-right: 40px;
+}
+.container1Div1>div div img{
+    margin-bottom: 20px;
+}
+.container1Div1 a{
+    text-decoration: none;
+    color: #5990db;
+}
+.container1Div1 a:hover{
+    text-decoration-line: underline;
+    color: gray;
+}
+.container1Div2{
+    display: flex;
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    width: 860px;
+    margin-left: 50px;
+    justify-content: space-evenly;
+}
+.container1Div2 >div{
+    border: 1px solid gray;
+    width: 90%;
+    /* margin-left: 20px; */
+    text-align: center;
+    height: 240px;
+    padding: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+.container1Div2 >div:nth-child(1){
+    margin-right: 20px; 
+}
+.container1Div2 >div button{
+    background-color: blue;
+    margin-left: -300px;
+    height: 30px;
+    width: 100px;
+    font-weight: bold;
+    color: white;
+    border: none;
+}
+.container1Div2 >div a{
+    margin-left: -250px; 
+    text-decoration: none;
+}
+.container1Div2-1 img{
+    width: 140px;
+    margin-top: 0px;
+}

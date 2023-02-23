@@ -1,0 +1,46 @@
+#container2{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color:#0046be ;
+    margin-top: 30px;
+    padding: 15px 0px 15px 0px ;
+    margin-bottom: 40px;
+}
+#container2 img{
+    width: 10%;
+    margin-right: 25px;
+}
+#container2>div{
+    margin-right: 20px;
+}
+#container2>div p{
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 0px;
+    color: white;
+}
+#container2>div h1{
+    font-size: 44px;
+    margin-top: 5px;
+    color: #fff200;
+}
+#container2 p{
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+}
+#container2 button{
+    padding: 7px 10px 7px 10px;
+    background-color:#fff200 ;
+    color: black;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#container2 button:hover{
+    background-color: yellow;
+}

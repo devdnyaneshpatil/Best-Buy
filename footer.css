@@ -1,0 +1,126 @@
+#footer{
+  margin-top: 100px;
+  background-color: #f0f2f4; 
+  padding-bottom: 30px;
+}
+.footerGrid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    padding-top: 30px;
+    justify-content: space-around;
+    margin-left: 50px;
+    padding-bottom: 70px;
+}
+.footerGrid>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footerGrid>div a{
+    text-decoration: none;
+    font-weight: bold;
+}
+.footerGrid>div a:hover{
+    text-decoration-line: underline;
+    color: black;
+}
+.footerGrid img{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+}
+.footerFlex{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+}
+.footerFlex>div{
+    display: flex;
+    flex-direction: column;
+}
+.footerFlex>div a,.footerFlex>div br{
+    text-decoration: none;
+    margin-top:10px;
+}
+.signInDiv{
+    /* border: 1px solid red; */
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white ;
+
+}
+.signInDiv hr{
+    width: 380px;
+    height: 1px;
+}
+.symbolDiv i{
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.signInimgBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -100px;
+}
+.signInimgBox i{
+    font-size: 40px;
+    margin-right: 20px;
+}
+.signInimgBox a{
+    color: blue;
+    font-weight: bold;
+}
+.signInimgBox h2{
+    margin-bottom: 0px;
+    margin-top: -15px;
+}
+.signInInputDiv input{
+width: 250px;
+height: 10px;
+padding: 10px;
+}
+.signInInputDiv button{
+    width: 100px;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+}
+.feedbackDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: center;
+}
+.feedbackDiv>div:nth-child(2) a{
+ margin-left: 10px;
+ margin-right: 10px;
+ text-decoration: none;
+}
+.footerLastBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footerLastBox>div a{
+    font-size: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    /* display: flex; */
+    /* justify-content: space-around; */
+}
+.footerLastBox>div a:hover{
+    text-decoration-line: underline;
+}

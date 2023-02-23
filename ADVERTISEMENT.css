@@ -1,0 +1,33 @@
+#ADVERTISEMENT{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+.ADVERTISEMENTBox1{
+    background-image:url(https://pisces.bbystatic.com/image2/BestBuy_US/dam/subghp-MMT-652430-appls-pds-50b29c97-be07-41f8-ad64-895e2cf0aeb7.jpg;maxHeight=500;maxWidth=500) ;
+    width: 500px;
+    height: 500px;
+}
+.ADVERTISEMENTBox2{
+    background-image: url(https://pisces.bbystatic.com/image2/BestBuy_US/dam/subghp-EVN-205712-upgrade-plus-b513dde8-d003-432d-b792-8b4eb9903e0d.jpg;maxHeight=500;maxWidth=500);
+    width: 500px;
+    height: 500px;
+    border: 1px solid gray;
+}
+.ADVERTISEMENThr hr{
+ height: 1px solid gray;
+ width: 460px;
+ margin-top: -5px;
+}
+.ADVERTISEMENTBox1 p{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.ADVERTISEMENTBox2 p{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
