@@ -1,0 +1,87 @@
+#NavbarMainDiv{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 85px;
+    justify-content: space-between;
+    background-color: #0046be;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    margin-top: 1px;
+    margin-left: -8px;
+}
+#NavbarMainDiv>div{
+    display: flex;
+    align-items: center;
+}
+#NavbarMainDiv>div:nth-child(1){
+    justify-content: space-around;
+    width: 60%;
+}
+#NavbarMainDiv>div:nth-child(1) input{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    font-size: 17px;
+    padding-left: 10px;
+    margin-left: -50px;
+}
+#NavbarMainDiv>div:nth-child(1) input::placeholder{
+    font-size: 15px;
+    word-spacing: 3px;
+    /* padding-left: 10px; */
+}
+#NavbarMainDiv>div:nth-child(1) button{
+    height: 42px;
+    margin-left: px;
+    border-radius:0px 5px 5px 0px  ;
+    border: none;
+    background-color: white;
+    padding: 0px 10px 0px 10px;
+    cursor: pointer;
+}
+#NavbarMainDiv>div>div{
+    display: flex;
+    align-items: center;
+}
+#NavbarMainDiv img{
+    width: 32%;
+    /* margin-left: 50px; */
+}
+.menuH2{
+    margin-left: -200px;
+    cursor: pointer;
+}
+.menuH2>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 5px;
+
+}
+a>b{
+    font-size: 23px;
+}
+#NavbarMainDiv>div:nth-child(2){
+    /* border: 1px solid red; */
+    width: 200px;
+    justify-content: space-between;
+    margin:0px 20px 0px 20px;
+    height: 50px;
+    padding-right: 40px;
+}
+.gg-credit-card,.gg-shopping-cart{
+    height: 20px;
+    margin-right: 10px;
+}
+#NavbarMainDiv>div:nth-child(2) a{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    width: 30px;
+}
+#NavbarMainDiv>div:nth-child(2) div{
+    cursor: pointer;
+}

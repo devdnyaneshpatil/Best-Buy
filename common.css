@@ -1,0 +1,35 @@
+
+#NavbarSubDiv{
+    margin-top:61px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    height: 50px;
+    align-items: center;
+    background-color:#0046be ;
+    width: 98%;
+    margin-left: -8px;
+    padding-right: 100px;
+}
+#NavbarSubDiv>div{
+    display: flex;
+    align-items: center;
+}
+#NavbarSubDiv a{
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+#NavbarSubDiv a:hover{
+    text-decoration-line: underline;
+}
+#NavbarSubDiv div i{
+    margin-right: -40px;
+    color: white;
+}
+#NavbarSubDiv .accountLinkDiv a{
+    margin-left: 40px;
+}
+.accountLinkDiv{
+    font-weight: bold;
+}

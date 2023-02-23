@@ -4,218 +4,348 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-    <style>
-        *{
-            padding: 0%;
-            margin: 0%;
-            box-sizing: border-box;
-        }
-        #nav{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1E88E5;
-            padding-right: 20px;
-        } 
-        #nav>div{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 20px;
-            color: white;
-        }
-        #logo{
-            width: 100%;
-            height: 70px;
-        }
-        #aiea{
-            text-decoration: none;
-            color: white;
-        }
-        #cart{
-            text-decoration: none;
-            color: white; 
-        }
-        #header{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            background-color:#1E88E5 ;
-            margin: 1px;
-        }
-        #topdeal{
-            text-decoration: none;
-            color: white;
-        }
-        #login{
-            text-decoration: none;
-            color: white;
-        }
-        #saved{
-            text-decoration: none;
-            color: white;
-        }
-        #product-container{
-        /* border: 2px solid red; */
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap: 10px;
-        
-      }
-      #product-container>div{
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        padding: 20px;
-        text-align: center;
-
-      }
-      #product-container>div>img{
-        width: 100%;
-      }
-      #product-container>div>button{
-        display: block;
-        margin: auto
-      }
-      #filter{
-        display: block;
-        margin: auto;
-        margin-bottom: 10px;
-        margin-top: 10px;
-      }
-      .nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      }
-
-
-        
-    </style>
+    <title>BEST BUY|OFFICIAL Online Store</title>
+    <link href='https://css.gg/copy.css' rel='stylesheet'>
+    <link href='https://css.gg/shopping-cart.css' rel='stylesheet'>
+    <link href='https://css.gg/credit-card.css' rel='stylesheet'>
+    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href='https://css.gg/format-justify.css' rel='stylesheet'> -->
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="common.css">4
+    <link rel="stylesheet" href="container1.css">
+    <link rel="stylesheet" href="container2.css">
+    <link rel="stylesheet" href="featuredOffersBox.css">
+    <link rel="stylesheet" href="dealsinspired.css">
+    <link rel="stylesheet" href="ADVERTISEMENT.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
-    <div id="nav">
-        <div id="right">
-            <img src="./image/x.jpg" alt="" id="logo">
-            <h1>menu</h1>
-            <!-- <input type="text" name="" id="search"> -->
-            <select id="filter">
-                <option value="">Filter By Category</option>
-                <option value="Laptop">Laptop</option>
-                <option value="Mobile">Mobile</option>
-                <option value="Speakers">Speakers</option>
-              </select>
+    <header>
+    <div id="NavbarMainDiv">
+        <div>
+                <a href="https://www.bestbuy.com/" target="_blank"><img src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/best-buy-co-inc-logo.png?v=20221104134121&w=240&h=240&zc=2" alt=""></a>
+                <div class="menuH2" onclick="newWindow1()">
+                    <!-- <i class="gg-format-justify"></i> -->
+                   <a href=""><b>&#9776</b></a>
+                   <h2>Menu</h2>
+                </div>
+                <div>
+                    <input type="text" placeholder="Serach Best Buy" >
+                    <button><i class="gg-search"></i></button>
+                </div>
         </div>
-
-        <div id="left">
-            <a href="aiea.html" id="aiea">Aiea</a>
-            <a href="cart.html" id="cart">Cart</a>
+        <div>
+                <div>
+                    <i class="gg-credit-card"></i>
+                    <a href="">
+                        <b>Aiea</b></a>
+                </div>
+                <div class="CartDiv" onclick="newWindow()">
+                    <i class="gg-shopping-cart"></i>
+                    <a href="https://www.bestbuy.com/cart"> 
+                        <b>Cart</b>
+                    </a>
+                </div>
+                
         </div>
     </div>
+    </header>
+    <!-- -------------------TopNavbar--------------------------- -->
+    <div id="NavbarSubDiv">
+        <div>
+            <a href="https://www.bestbuy.com/site/electronics/top-deals/pcmcat1563299784494.c?id=pcmcat1563299784494">Top Deals</a>
+            <a href="https://www.bestbuy.com/site/misc/deal-of-the-day/pcmcat248000050016.c?id=pcmcat248000050016">Deal of the Day</a>
+            <a href="https://www.bestbuy.com/site/electronics/totaltech/pcmcat1629315977983.c?id=pcmcat1629315977983"> Totaltech Membership</a>
+            <a href="https://www.bestbuy.com/site/electronics/totaltech/pcmcat1629315977983.c?id=pcmcat1629315977983">Credit Cards</a>
+            <a href="https://www.bestbuy.com/site/electronics/totaltech/pcmcat1629315977983.c?id=pcmcat1629315977983">Gift Cards</a>
+            <a href="https://www.bestbuy.com/site/electronics/totaltech/pcmcat1629315977983.c?id=pcmcat1629315977983">Gift Ideas</a>
+            <a href="https://www.bestbuy.com/site/health-wellness/health-wellness-solutions/pcmcat1603917798858.c?id=pcmcat1603917798858">Health & Wellness</a>
+            <a href="">More</a>
+        </div>
+        <div class="accountLinkDiv">
+            <div>
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                 <a href="">Account</a>  
+            </div>
+            <a href="">Recently Viewed</a>
+            <a href="">Order Status</a>
+            <a href="">Saved Items</a>
+        </div>
+    </div>
+    <!-- -------------------------NavbarSubDiv---------------------------------------------- -->
+    <div id="container1">
+        <div class="backgroundImgDiv" onclick="newWindow2()" >
+            <h1>Up to $ 1,100 value</h1>
+            <a href="">With qualified activation and trade-in</a>
+            <br>
+            <button>Shop Now</button>
+        </div>
+        <div>
+            <div class="container1Div1">
+                <h3>Today's top picks</h3>
+                <div>
+                    <div>
+                        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6523/6523225_sd.jpg;maxHeight=220;maxWidth=210" alt="">
+                        <a href="https://www.bestbuy.com/site/apple-airpods-3rd-generation-with-lightning-charging-case-white/6376551.p?skuId=6376551">Playstation - 5 Console – God of War Ragnarök Bundle</a>
+                    </div>
+                    <div>
+                        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4900/4900964_sd.jpg;maxHeight=120;maxWidth=210" alt="">
+                        <a href="https://www.bestbuy.com/site/apple-airpods-3rd-generation-with-lightning-charging-case-white/6376551.p?skuId=6376551">AppleAirPods Pro (2nd generation)</a>
+                    </div>
+                    <div>
+                        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5721/5721600_sd.jpg;maxHeight=100;maxWidth=210" alt="">
+                        <a href="https://www.bestbuy.com/site/apple-airpods-pro-2nd-generation-white/4900964.p?skuId=4900964">MacBook Air 13.3" Laptop - Apple M1 chip</a>
+                    </div>
+                    <div>
+                        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494638_sd.jpg;maxHeight=100;maxWidth=210" alt="">
+                        <a href="https://www.bestbuy.com/site/macbook-air-13-6-laptop-apple-m2-chip-8gb-memory-256gb-ssd-latest-model-midnight/6509650.p?skuId=6509650">ASUS - ROG Zephyrus 14” WQXGA 120Hz  </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container1Div2">
+                <div onclick="newWindow3()">
+                    <button onclick="newWindow3()">Outlet Deals</button>
+                    <h1 style="color: #bb0628;">Clearance,</h1>
+                    <h1>open-Box</h1>
+                    <h1>and more.</h1>
+                    <a href="">View outlet deals</a>
+                </div>
+                <div class="container1Div2-1" oncanplay="newWindow4()">
+                    <button onclick="newWindow4">Top Deals</button>
+                    <br>
+                    <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6494/6494638_sd.jpg;maxHeight=50;maxWidth=100" alt="">
+                    <br>
+                    <p>ASUS - ROG Zephyrus 14” WQXGA 120Hz</p>
+                    <h3 style="margin-left: -250px;">$1,099</h3>
+                    <a href="">Shop all Top Deals</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -----------------------------------container1--------------------------------------- -->
+    <div id="container2">
+        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/GL-66611-cb-fs-211018-6dd3346e-0ef8-458c-b16d-5ff2264fbb11.png" alt="">
+        <div>
+            <p>Apply today and get</p>
+            <h1>10% back</h1>
+        </div>
+        <p>in rewards on your first day of <br> purchases when you are approved for <br> the Card.</p>
+        <button>Learn More</button>
+    </div>
+    <!-- -----------------------------------------ontainer2----------------------------------- -->
+    <div id="ADVERTISEMENT">
+         <a style="text-decoration: none;" href="https://www.bestbuy.com/site/home-appliances/major-appliances-sale-event/pcmcat321600050000.c?id=pcmcat321600050000">
+            <div class="ADVERTISEMENTBox1">
+                 <p style="padding-top: 350px;">Limited time: 24 month financing* on application <br> purchases $1,499 and up with the My Best Buy® <br> Credit Card.</p>
+                 <p>Offer ends 3/1/23.</p>
+             </div>
+         </a>
+         <div class="ADVERTISEMENThr">
+            <hr>
+         </div>
+         <a style="text-decoration: none;" href="https://www.bestbuy.com/site/home-appliances/major-appliances-sale-event/pcmcat321600050000.c?id=pcmcat321600050000">
+            <div class="ADVERTISEMENTBox2">
+                  <p style="padding-top: 350px;">Amazing new MacBook. <br>
+                    Unbelievable monthly price.</p>
+                <p style="color: gray; font-weight: unset;">And an option to upgrade every three years. <br>
+                    Upgrade+ program terms apply.</p>
+            </div>
+         </a>
+         
+         
+    </div>
+    <!-- -------------------------------------------ADVERTISEMENT------------------------------- -->
+    <h2>Deals inspired by your shopping</h2>
+    <hr>
+    <div id="dealsinspired">
+        <div>
+            <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6523/6523225_sd.jpg;maxHeight=300;maxWidth=400" alt="">
+            <a href="https://www.bestbuy.com/site/playstation-5-console-god-of-war-ragnarok-bundle/6523225.p?skuId=6523225">Playstation - 5 Console – God of War Ragnarök Bundle</a>
+            <div>&#11088 &#11088 &#11088 &#11088 &#9734 <p>(1,811)</p></div>
+            <h3>$1,049.00</h3>
+        </div>
+        <div>
+            <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6523/6523167_sd.jpg;maxHeight=272;maxWidth=400" alt="">
+            <a href="https://www.bestbuy.com/site/asus-rog-zephyrus-g14-14-laptop-amd-ryzen-7-16gb-memory-nvidia-geforce-gtx-1650-512gb-ssd/6466255.p?skuId=6466255">Apple - MacBook Pro 13.3" Laptop - Intel Core i5 - 8GB Memory - 128GB SSD - Pre-Owned - Space Gray</a>
+            <div>&#11088 &#11088 &#11088 &#9734 &#9734  <p>(891)</p></div>
+            <h3>$699.99</h3>
+        </div>
+        <div>
+            <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6523/6523169_sd.jpg;maxHeight=272;maxWidth=400" alt="">
+            <a href="https://www.bestbuy.com/site/apple-airpods-with-charging-case-2nd-generation-white/6084400.p?skuId=6084400">Apple - AirPods with Charging Case (2nd generation) - White</a>
+            <div>&#11088 &#11088 &#11088 &#11088 &#9734 <p>(751)</p></div>
+            <h3>$1,449.00</h3>
+        </div>
+        <div>
+            <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6523/6523169_sd.jpg;maxHeight=272;maxWidth=400" alt="">
+            <a href="https://www.bestbuy.com/site/apple-macbook-pro-13-3-laptop-intel-core-i5-8gb-memory-128gb-ssd-pre-owned-space-gray/6413734.p?skuId=6413734">Apple - MacBook Pro 13.3" Laptop - Intel Core i5 - 8GB Memory - 128GB SSD - Pre-Owned -Space Gray </a>
+            <div>&#11088 &#11088 &#11088 &#11088 &#9734 <p>(961)</p></div>
+            <h3>$149.00</h3>
+        </div>
+    </div>
+    <!-- -------------------------------------Deals inspired by your shopping-------------------- -->
     <div>
-        <div id="header">
-            <a href="topdeals.html" id="topdeal">top deals</a>
-            <a href="login.html" id="login">account</a>
-            <a href="saveditems.html" id="saved">saved items</a>
+        <h2>Our featured offers</h2>
+        <hr>
+        <div id="featuredOffersBox">
+            <div>
+                <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/MMT-646691-4k-pol_der-879eda94-1d5b-423b-b468-4a90ca51b3cd.jpg;maxHeight=504;maxWidth=740" alt="">
+                <a href=""> 4K TVs as low as $209.99.</a>
+            </div>
+            <div>
+                <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol_macbook-pro-0117-02a83df2-25e3-449d-bb92-9f25225a7094.jpg;maxHeight=504;maxWidth=740" alt="">
+                <a href="">MacBook Pro. Supercharged by M2 Pro and M2 Max.</a>
+                <p>Get it at an unbelievable monthly price with Upgrade+ powered by Citizens Pay.</p>
+                <p>Upgrade+ program terms apply.</p>
+            </div>
+            <div>
+                <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol-MMT-542949x2-b735526a-3306-4c7c-9692-03cc2aed1497.jpg;maxHeight=504;maxWidth=740" alt="">
+                <a href="">Save on select e-bikes, e-scooters and <br> hoverboards.</a>
+                <p>Choose your ride from an assortment of electric vehicles that provide stylish, energy-efficient transportation.</p>
+            </div>
         </div>
     </div>
-
-    <!-- bodypart goes here -->
-    <div id="cont">
-        
+    <!-- ----------------------------Our featured offers------------------------------------------ -->
+    <div id="footer">
+         <div class="footerGrid">
+            <div>
+              <img src="https://tse1.mm.bing.net/th?id=OIP.Sp1EpOhHR0YSMtIbwACEHQHaIc&pid=Api&P=0" alt="">
+              <a href="">Visit Our Support Center</a>  
+            </div>
+            <div>
+              <img src="https://tse1.mm.bing.net/th?id=OIP.PQCloEdwurDGcTQdyfjuZgHaHa&pid=Api&P=0" alt="">
+              <a href="">Check Your Order Status</a>  
+            </div>
+            <div>
+              <img src="https://tse2.mm.bing.net/th?id=OIP.57tzQicUGLKYKlIqDyQxXAHaDy&pid=Api&P=0" alt="">
+              <a href="">Shipping delivery & Store Pickup</a>  
+            </div>
+            <div>
+              <img src="https://tse3.mm.bing.net/th?id=OIP.YmmvNrF_A0NNwIHYlUrCmgHaE8&pid=Api&P=0" alt="">
+              <a href="">Return & Exchanges</a>  
+            </div>
+            <div>
+              <img src="https://tse3.mm.bing.net/th?id=OIP.7mQNggK_vRhh0--CEYEdnAHaHe&pid=Api&P=0" alt="">
+              <a href="">Price Match Guaranetee</a>  
+            </div>
+         </div>
+         <hr>
+         <div class="footerFlex">
+            <div>
+                <h3>Order & Purchases</h3>
+                <a href="https://www.bestbuy.com/profile/ss/orderlookup">Check Order Status</a>
+                <a href="https://www.bestbuy.com/site/help-topics/shipping-delivery-store-pickup/pcmcat316000050003.c?id=pcmcat316000050003">Shipping, Delivery & Pickup</a>
+                <a href="https://www.bestbuy.com/site/help-topics/return-exchange-policy/pcmcat260800050014.c?id=pcmcat260800050014">Returns & Exchanges</a>
+                <a href="https://www.bestbuy.com/site/customer-service/price-match-guarantee/pcmcat290300050002.c?id=pcmcat290300050002">Price Match Guarantee</a>
+                <a href="https://www.bestbuy.com/site/help-topics/product-recalls/pcmcat114800050015.c?id=pcmcat114800050015">Product Recalls</a>
+                <a href="https://www.bestbuy.com/site/services/best-buy-trade-in/pcmcat133600050011.c?id=pcmcat133600050011">Trade-In Program</a>
+                <a href="https://www.bestbuy.com/site/electronics/gift-cards/cat09000.c?id=cat09000#/">Gift Cards</a>
+                <h3>Payment Options</h3>
+                <a href="https://www.bestbuy.com/site/misc/financing-rewards/pcmcat102500050032.c?id=pcmcat102500050032">My Best Buy® Credit Card</a>
+                <a href="https://www.bestbuy.com/identity/sso/signin?contextId=sso-visa&processIndicator=dashboard&source=fT4TCYlhM%2FBHt4GYEIyTpUXh8eOIYXDjvQ8brdIq%2BgjFKp0ZC2Aq%2BH81O%2Futk9NoztIKhuI3FqmuRt1rZid1%2Bw%3D%3D">Pay Your Bill at Citibank</a>
+                <a href="https://www.bestbuy.com/site/financing-rewards/progressive-leasing/pcmcat1535574988808.c?id=pcmcat1535574988808">Lease to Own</a>
+            </div>
+            <div>
+                <h3>Support & Services</h3>
+                <a href="https://www.bestbuy.com/support">Visit our Support Center</a>
+                <a href="https://www.bestbuy.com/services/triage/shopping">Shop with an Expert</a>
+                <a href="https://www.bestbuy.com/services/triage/home">Schedule a Service</a>
+                <a href="https://www.bestbuy.com/dossier/service/appointmentfinder">Manage an Appointment</a>
+                <a href="https://www.bestbuy.com/site/electronics/services/pcmcat1528819595254.c?id=pcmcat1528819595254">Protection & Support Plans</a>
+                <a href="https://www.bestbuy.com/site/services/recycling/pcmcat149900050025.c?id=pcmcat149900050025">Haul Away & Recycling</a>
+                <a href="https://www.bestbuy.com/contact-us">Contact Us</a>
+                <h3>Rewards & Membership</h3>
+                <a href="https://www.bestbuy.com/site/electronics/totaltech/pcmcat1629315977983.c?id=pcmcat1629315977983">Best Buy Totaltech</a>
+                <a href="https://www.bestbuy.com/site/misc/my-best-buy/pcmcat309300050007.c?id=pcmcat309300050007">My Best Buy</a>
+                <a href="https://www.bestbuy.com/profile/c/rwz/overview">View Points & Certificates</a>
+                <a href="https://www.bestbuy.com/loyalty/catalog">Member Offers</a>
+            </div>
+            <div>
+                <h3>Partnerships</h3>
+                <a href="https://www.bestbuy.com/site/partnerships/best-buy-affiliate-program/pcmcat198500050002.c?id=pcmcat198500050002">Affiliate Program</a>
+                <a href="https://www.bestbuyads.com/">Advertise with Us</a>
+                <a href="https://developer.bestbuy.com/">Developers</a>
+                <a href="https://healthcare.bestbuy.com/?ref=bestbuy-site&loc=footer">Best Buy Health</a>
+                <a href="https://www.bestbuy.com/site/bestbuy-business/bestbuy-education/pcmcat356600050000.c?id=pcmcat356600050000">Best Buy Education</a>
+                <a href="https://www.bestbuy.com/site/electronics/bestbuy-business/pcmcat230900050001.c?id=pcmcat230900050001">Best Buy Business</a>
+                <br>
+                <br>
+                <h3>About Best Buy</h3>
+                <a href="https://corporate.bestbuy.com/">Corporate Information</a>
+                <a href="https://jobs.bestbuy.com/bby">Careers</a>
+                <a href="https://jobs.bestbuy.com/bby">Corporate Responsibility & Sustainability</a>
+                <a href="https://www.bestbuy.com/discover-learn">Discover & Learn</a>
+            </div>
+            <div class="signInDiv">
+                <a href="SignInMainPage.html">Sign in or Create Account</a>
+                <hr>
+                <h3>Get the latest deals and more.</h3>
+                <div class="signInInputDiv">
+                    <input type="email" placeholder="Enter Email address">
+                    <button>Sign Up</button>
+                </div>
+                <hr>
+                <div class="signInimgBox">
+                    <i class="fa fa-cubes" aria-hidden="true"></i>
+                    <div>
+                        <h2>Best Buy app</h2>
+                            <a href="https://www.bestbuy.com/site/misc/mobile-app/pcmcat208500050016.c?id=pcmcat208500050016">Learn More</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="symbolDiv">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                </div>
+                <hr>
+                <a href="https://www.bestbuy.com/site/misc/best-buy-community/pcmcat191300050013.c?id=pcmcat191300050013">Forums, blogs & more</a>
+            </div>
+         </div>
+         <div class="feedbackDiv">
+            <div>
+                <p>How was your experience?<a href="">Give feedback about our website</a></p>
+            </div>
+            <div>
+                <a href="">Mobile Site</a>
+                <a href="">Best Buy Canada</a>
+            </div>
+        </div>
+         <hr>
+        <div class="footerLastBox">
+            <div>
+                <a href="">Accessibility</a>
+                <a href="">Terms & Conditions</a>
+                <a href="">Privacy</a>
+                <a href="">Interest-Based Ads</a>
+                <a href="">State Privacy Rights</a>
+                <a href="">CA Do Not Sell/Share My Personal Information</a>
+                <a href="">Limit Use of My Sensitive Personal Information</a>
+                <a href="">Targeted Advertising Opt Out</a>
+                <a href="">CA Supply Chain Transparency Act</a>
+            </div>
+            <div>
+                <p>In-store pricing may vary. Prices and offers are subject to change. © 2023 Best Buy. All rights reserved. BEST BUY, the BEST BUY logo, the tag design, and MY BEST BUY are trademarks of Best Buy and its affiliated companies.</p>
+            </div>
+        </div>
     </div>
-    
-    <div id="product-container">
-        <!-- Here Append All the Products  -->
-      </div>
 </body>
-<script>
-     const url='https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products'
-
-async function fetchData(){
-  try {
-    let res=await fetch(url)
-    res=await res.json()
-    // console.log(res.data)
-    filterData(res.data)
-  } catch (error) {
-    console.log('error',error)
-  }
-}
- 
-fetchData()
-let filterby=document.getElementById('filter')
-filterby.addEventListener('change',()=>{
-  fetchData()
-})
-function filterData(data){
- if(filterby.value==""){
-  displayData(data)
- }else{
-  data=data.filter((ele)=>{
-    return ele.category==filterby.value
-  })
-  displayData(data)
- }
-}
-
-   let Cart=JSON.parse(localStorage.getItem('cart'))||[]
-
- let container=document.getElementById('product-container')
-function displayData(data){
-   container.innerHTML=''
-  data.forEach((ele)=>{
-    let card=document.createElement('div')
-
-    let image=document.createElement('img')
-    let brand=document.createElement('h2')
-    let category=document.createElement('h4')
-    let price=document.createElement('h3')
-    let detail=document.createElement('p')
-    let addtocart=document.createElement('button')
-
-    image.setAttribute('src',ele.img)
-    brand.innerText=ele.brand
-    category.innerText=ele.category
-    price.innerText='₹'+ele.price
-    detail.innerText=ele.details
-    addtocart.innerText='Add To Cart'
-
-    addtocart.addEventListener('click',()=>{
-      if(checkDuplicate(ele)){
-        alert('Product Aready In The Cart')
-      }else{
-        Cart.push({...ele,quantity:1})
-        localStorage.setItem('cart',JSON.stringify(Cart))
-        alert('Product Added To Cart')
-      }
-    })
-
-    card.append(image,brand,price,detail,category,addtocart)
-    container.append(card)
-
-  })
-  console.log('display',data)
-}
-
-function checkDuplicate(ele){
-   for(let i=0; i<Cart.length; i++){
-    if(Cart[i].id==ele.id){
-      return true
-    }
-   }
-  return false
-}
-
-
-let productdata=[
-    {
-        image:'',
-        brand:Apple,
-        category:mobile,
-        title:  '',
-    }
-]
-</script>
 </html>
+<script>
+    function newWindow1(){
+        window.location.assign("https://www.bestbuy.com/");
+    }
+    function newWindow2(){
+        window.location.assign("https://www.bestbuy.com/site/samsung-store/learn-about-samsung-galaxy-s23/pcmcat1674142583070.c?id=pcmcat1674142583070");
+    }
+    function newWindow3(){
+        window.location.assign("https://www.bestbuy.com/site/electronics/outlet-refurbished-clearance/pcmcat142300050026.c?id=pcmcat142300050026");
+    }
+    function newWindow4(){
+        window.location.assign("https://www.bestbuy.com/site/macbook-air-13-6-laptop-apple-m2-chip-8gb-memory-256gb-ssd-latest-model-midnight/6509650.p?skuId=6509650");
+    }
+    
+</script>
