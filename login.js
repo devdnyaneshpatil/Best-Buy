@@ -1,4 +1,4 @@
-userData=JSON.parse(localStorage.getItem("userStoData"))
+userData=JSON.parse(localStorage.getItem("userStoData"))||[]
 console.log(userData);
 document.querySelector("#form").addEventListener("submit",checkAndEnterFun)
 function checkAndEnterFun(){
