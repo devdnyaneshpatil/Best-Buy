@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+      /* Write all necessery css here  */
+      #mainDiv{
+        display: flex;
+        margin-top: 100px;
+      }
+      #mainDiv>div:nth-child(1){
+        width: 75%;
+      }
+      #mainDiv>div:nth-child(2){
+        /* width: 20%; */
+        /* border: 1px solid gray; */
+        margin-left: 100px;
+      }
+      #cart-container{
+        /* border: 2px solid red; */
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        
+      }
+      #cart-container>div{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 20px;
+        text-align: center;
+
+      }
+      #cart-container>div>img{
+        width: 70%;
+      }
+      #cart-container>div>button{
+        /* display: block;
+        margin: auto */
+        margin-left: 5px;
+      }
+      .nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #cart-total{
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <div id="NavbarMainDiv">
+            <div>
+                    <a href="https://www.bestbuy.com/" target="_blank"><img src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/best-buy-co-inc-logo.png?v=20221104134121&w=240&h=240&zc=2" alt=""></a>
+                    <div class="menuH2" onclick="newWindow1()">
+                        <!-- <i class="gg-format-justify"></i> -->
+                       <a href=""><b>&#9776</b></a>
+                       <h2>Menu</h2>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Serach Best Buy" >
+                        <button><i class="gg-search"></i></button>
+                    </div>
+            </div>
+            <div>
+                    <div>
+                        <i class="gg-credit-card"></i>
+                        <a href="">
+                            <b>Aiea</b></a>
+                    </div>
+                    <div class="CartDiv" onclick="newWindow()">
+                        <i class="gg-shopping-cart"></i>
+                        <a href="deal.html"> 
+                            <b>Deal</b>
+                        </a>
+                    </div>
+                    
+            </div>
+    </div>
+    <div id="mainDiv">
+    <div id="cart-container">
+        <h1 >Your Card</h1>
+            <!-- Here Append All the cart Products  -->
+    </div>
+    <div>
+        <h1 id="total">Order Summary: </h1>
+        <hr style="width:80%">
+        <h1><span id="cart-total">$0</span></h1>
+    </div>
+</div>
+ <!-- footer strts here -->
+ <div id="footer">
+    <div class="footerGrid">
+        <div>
+            <img src="https://tse1.mm.bing.net/th?id=OIP.Sp1EpOhHR0YSMtIbwACEHQHaIc&pid=Api&P=0" alt="">
+            <a href="">Visit Our Support Center</a>
+        </div>
+        <div>
+            <img src="https://tse1.mm.bing.net/th?id=OIP.PQCloEdwurDGcTQdyfjuZgHaHa&pid=Api&P=0" alt="">
+            <a href="">Check Your Order Status</a>
+        </div>
+        <div>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.57tzQicUGLKYKlIqDyQxXAHaDy&pid=Api&P=0" alt="">
+            <a href="">Shipping delivery & Store Pickup</a>
+        </div>
+        <div>
+            <img src="https://tse3.mm.bing.net/th?id=OIP.YmmvNrF_A0NNwIHYlUrCmgHaE8&pid=Api&P=0" alt="">
+            <a href="">Return & Exchanges</a>
+        </div>
+        <div>
+            <img src="https://tse3.mm.bing.net/th?id=OIP.7mQNggK_vRhh0--CEYEdnAHaHe&pid=Api&P=0" alt="">
+            <a href="">Price Match Guaranetee</a>
+        </div>
+    </div>
+    <hr>
+    <div class="footerFlex">
+        <div>
+            <h3>Order & Purchases</h3>
+            <a href="https://www.bestbuy.com/profile/ss/orderlookup">Check Order Status</a>
+            <a
+                href="https://www.bestbuy.com/site/help-topics/shipping-delivery-store-pickup/pcmcat316000050003.c?id=pcmcat316000050003">Shipping,
+                Delivery & Pickup</a>
+            <a
+                href="https://www.bestbuy.com/site/help-topics/return-exchange-policy/pcmcat260800050014.c?id=pcmcat260800050014">Returns
+                & Exchanges</a>
+            <a
+                href="https://www.bestbuy.com/site/customer-service/price-match-guarantee/pcmcat290300050002.c?id=pcmcat290300050002">Price
+                Match Guarantee</a>
+            <a
+                href="https://www.bestbuy.com/site/help-topics/product-recalls/pcmcat114800050015.c?id=pcmcat114800050015">Product
+                Recalls</a>
+            <a
+                href="https://www.bestbuy.com/site/services/best-buy-trade-in/pcmcat133600050011.c?id=pcmcat133600050011">Trade-In
+                Program</a>
+            <a href="https://www.bestbuy.com/site/electronics/gift-cards/cat09000.c?id=cat09000#/">Gift Cards</a>
+            <h3>Payment Options</h3>
+            <a
+                href="https://www.bestbuy.com/site/misc/financing-rewards/pcmcat102500050032.c?id=pcmcat102500050032">My
+                Best Buy® Credit Card</a>
+            <a
+                href="https://www.bestbuy.com/identity/sso/signin?contextId=sso-visa&processIndicator=dashboard&source=fT4TCYlhM%2FBHt4GYEIyTpUXh8eOIYXDjvQ8brdIq%2BgjFKp0ZC2Aq%2BH81O%2Futk9NoztIKhuI3FqmuRt1rZid1%2Bw%3D%3D">Pay
+                Your Bill at Citibank</a>
+            <a
+                href="https://www.bestbuy.com/site/financing-rewards/progressive-leasing/pcmcat1535574988808.c?id=pcmcat1535574988808">Lease
+                to Own</a>
+        </div>
+        <div>
+            <h3>Support & Services</h3>
+            <a href="https://www.bestbuy.com/support">Visit our Support Center</a>
+            <a href="https://www.bestbuy.com/services/triage/shopping">Shop with an Expert</a>
+            <a href="https://www.bestbuy.com/services/triage/home">Schedule a Service</a>
+            <a href="https://www.bestbuy.com/dossier/service/appointmentfinder">Manage an Appointment</a>
+            <a
+                href="https://www.bestbuy.com/site/electronics/services/pcmcat1528819595254.c?id=pcmcat1528819595254">Protection
+                & Support Plans</a>
+            <a href="https://www.bestbuy.com/site/services/recycling/pcmcat149900050025.c?id=pcmcat149900050025">Haul
+                Away & Recycling</a>
+            <a href="https://www.bestbuy.com/contact-us">Contact Us</a>
+            <h3>Rewards & Membership</h3>
+            <a
+                href="https://www.bestbuy.com/site/electronics/totaltech/pcmcat1629315977983.c?id=pcmcat1629315977983">Best
+                Buy Totaltech</a>
+            <a href="https://www.bestbuy.com/site/misc/my-best-buy/pcmcat309300050007.c?id=pcmcat309300050007">My
+                Best Buy</a>
+            <a href="https://www.bestbuy.com/profile/c/rwz/overview">View Points & Certificates</a>
+            <a href="https://www.bestbuy.com/loyalty/catalog">Member Offers</a>
+        </div>
+        <div>
+            <h3>Partnerships</h3>
+            <a
+                href="https://www.bestbuy.com/site/partnerships/best-buy-affiliate-program/pcmcat198500050002.c?id=pcmcat198500050002">Affiliate
+                Program</a>
+            <a href="https://www.bestbuyads.com/">Advertise with Us</a>
+            <a href="https://developer.bestbuy.com/">Developers</a>
+            <a href="https://healthcare.bestbuy.com/?ref=bestbuy-site&loc=footer">Best Buy Health</a>
+            <a
+                href="https://www.bestbuy.com/site/bestbuy-business/bestbuy-education/pcmcat356600050000.c?id=pcmcat356600050000">Best
+                Buy Education</a>
+            <a
+                href="https://www.bestbuy.com/site/electronics/bestbuy-business/pcmcat230900050001.c?id=pcmcat230900050001">Best
+                Buy Business</a>
+            <br>
+            <br>
+            <h3>About Best Buy</h3>
+            <a href="https://corporate.bestbuy.com/">Corporate Information</a>
+            <a href="https://jobs.bestbuy.com/bby">Careers</a>
+            <a href="https://jobs.bestbuy.com/bby">Corporate Responsibility & Sustainability</a>
+            <a href="https://www.bestbuy.com/discover-learn">Discover & Learn</a>
+        </div>
+        <div class="signInDiv">
+            <a href="SignInMainPage.html">Sign in or Create Account</a>
+            <hr>
+            <h3>Get the latest deals and more.</h3>
+            <div class="signInInputDiv">
+                <input type="email" placeholder="Enter Email address">
+                <button>Sign Up</button>
+            </div>
+            <hr>
+            <div class="signInimgBox">
+                <i class="fa fa-cubes" aria-hidden="true"></i>
+                <div>
+                    <h2>Best Buy app</h2>
+                    <a
+                        href="https://www.bestbuy.com/site/misc/mobile-app/pcmcat208500050016.c?id=pcmcat208500050016">Learn
+                        More</a>
+                </div>
+            </div>
+            <hr>
+            <div class="symbolDiv">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+            </div>
+            <hr>
+            <a
+                href="https://www.bestbuy.com/site/misc/best-buy-community/pcmcat191300050013.c?id=pcmcat191300050013">Forums,
+                blogs & more</a>
+        </div>
+    </div>
+    <div class="feedbackDiv">
+        <div>
+            <p>How was your experience?<a href="">Give feedback about our website</a></p>
+        </div>
+        <div>
+            <a href="">Mobile Site</a>
+            <a href="">Best Buy Canada</a>
+        </div>
+    </div>
+    <hr>
+    <div class="footerLastBox">
+        <div>
+            <a href="">Accessibility</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">Privacy</a>
+            <a href="">Interest-Based Ads</a>
+            <a href="">State Privacy Rights</a>
+            <a href="">CA Do Not Sell/Share My Personal Information</a>
+            <a href="">Limit Use of My Sensitive Personal Information</a>
+            <a href="">Targeted Advertising Opt Out</a>
+            <a href="">CA Supply Chain Transparency Act</a>
+        </div>
+        <div>
+            <p>In-store pricing may vary. Prices and offers are subject to change. © 2023 Best Buy. All rights
+                reserved. BEST BUY, the BEST BUY logo, the tag design, and MY BEST BUY are trademarks of Best Buy
+                and its affiliated companies.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer ends here -->
+     
+       
+  </body>
+  <script>
+    // Write all necessery JS here 
+    let Cart =JSON.parse(localStorage.getItem('cart'))
+     let container=document.getElementById('cart-container')
+
+    function displayData(){
+       container.innerHTML=''
+      Cart.forEach((ele)=>{
+        let card=document.createElement('div')
+
+        let image=document.createElement('img')
+        let brand=document.createElement('h2')
+        let category=document.createElement('h4')
+        let price=document.createElement('h3')
+        let detail=document.createElement('p')
+        let addtocart=document.createElement('button')
+        let increase=document.createElement('button')
+        let decrease=document.createElement('button')
+        let quantity=document.createElement('span')
+
+        image.setAttribute('src',ele.img)
+        brand.innerText=ele.brand
+        category.innerText=ele.category
+        price.innerText='₹'+ele.price
+        detail.innerText=ele.details
+        addtocart.innerText='Remove'
+        increase.innerText='+'
+        decrease.innerText='-'
+        quantity.innerText=ele.quantity
+
+        addtocart.addEventListener('click',()=>{
+          Cart=Cart.filter((element)=>{
+            return element.id!=ele.id
+          })
+          localStorage.setItem('cart',JSON.stringify(Cart))
+          displayData()
+        })
+        
+        increase.addEventListener('click',()=>{
+          Cart=Cart.map((element)=>{
+            if(element.id==ele.id){
+              ele.quantity++
+              return element
+            }else{
+              return element
+            }
+          })
+          localStorage.setItem('cart',JSON.stringify(Cart))
+          displayData()
+        })
+
+        decrease.addEventListener('click',()=>{
+          Cart=Cart.map((element)=>{
+            if(element.id==ele.id&&element.quantity>1){
+              ele.quantity--
+              return element
+            }else{
+              return element
+            }
+          })
+          localStorage.setItem('cart',JSON.stringify(Cart))
+          displayData()
+        })
+
+
+
+        let sum=0
+        for(let i=0; i<Cart.length; i++){
+          if(Cart==''){
+            sum=0
+          }else{
+            sum+=Cart[i].price*Cart[i].quantity
+          }
+          
+        }
+        document.getElementById('cart-total').innerText=`$`+' '+ sum
+        card.append(image,brand,price,category,increase,quantity, decrease,addtocart)
+        container.append(card)
+
+      })
+      // console.log('display',data)
+    }
+      displayData()
+  </script>
+</html>
