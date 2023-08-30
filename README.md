@@ -1,5 +1,5 @@
 # ablaze-twist-8354-
-
+E-commerce website for electronic Gadgets.
 
 # tech-stack
 >HTML
