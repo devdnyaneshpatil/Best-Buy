@@ -1,8 +1,28 @@
 // Write all necessery JS here
-let Cart = JSON.parse(localStorage.getItem("cart"));
+
+const userInfo=JSON.parse(localStorage.getItem("userInfo"))
+if(userInfo){
+  alert("Welcome to the cart")
+}else{
+  alert("Best Buy Says\nLogin First")
+  window.location.href="../Authentication/login.html"
+}
+
+fetch("http://localhost:8080/users/cart",{
+  method:"GET",
+  headers:{
+    "Content-Type":"application/json",
+    "authorization":`Bearer ${userInfo.token}`
+  }
+})
+.then((res)=>res.json())
+.then((data)=>{
+  displayData(data.msg);
+})
+.catch((error)=>console.log(error))
 let container = document.getElementById("cart-container");
 
-function displayData() {
+function displayData(Cart) {
   container.innerHTML = "";
   Cart.forEach((ele) => {
     let card = document.createElement("div");
@@ -84,4 +104,3 @@ function displayData() {
   });
   // console.log('display',data)
 }
-displayData();

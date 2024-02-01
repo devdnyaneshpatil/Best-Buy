@@ -94,6 +94,15 @@ const loginUser = async (req, res) => {
 //   }
 // };
 
+const getCart=async(req,res)=>{
+   try {
+      const user=await UserModel.findOne({_id:req.user._id}).populate('cart')
+      res.status(200).json({msg:user.cart})
+   } catch (error) {
+      res.status(400).json({msg:error.message})
+   }
+}
+
 const addToCart = async (req, res) => {
   const productId = req.params.id;
   try {
@@ -134,4 +143,10 @@ const removeFromCart = async (req, res) => {
   }
 };
 
-module.exports = { registerUser, loginUser, addToCart, removeFromCart };
+module.exports = {
+  registerUser,
+  loginUser,
+  addToCart,
+  removeFromCart,
+  getCart,
+};
