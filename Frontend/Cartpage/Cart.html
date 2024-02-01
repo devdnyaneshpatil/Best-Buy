@@ -5,57 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart Page</title>
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="footer.css">
-    <style>
-      /* Write all necessery css here  */
-      #mainDiv{
-        display: flex;
-        margin-top: 100px;
-      }
-      #mainDiv>div:nth-child(1){
-        width: 75%;
-      }
-      #mainDiv>div:nth-child(2){
-        /* width: 20%; */
-        /* border: 1px solid gray; */
-        margin-left: 100px;
-      }
-      #cart-container{
-        /* border: 2px solid red; */
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap: 10px;
-        
-      }
-      #cart-container>div{
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        padding: 20px;
-        text-align: center;
-
-      }
-      #cart-container>div>img{
-        width: 70%;
-      }
-      #cart-container>div>button{
-        /* display: block;
-        margin: auto */
-        margin-left: 5px;
-      }
-      .nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      }
-      #cart-total{
-        display: flex;
-        justify-content: center;
-      }
-    </style>
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="Cart.css" />
   </head>
   <body>
-    <div>
+       <div>
         <div id="NavbarMainDiv">
             <div>
                     <a href="https://www.bestbuy.com/" target="_blank"><img src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/best-buy-co-inc-logo.png?v=20221104134121&w=240&h=240&zc=2" alt=""></a>
@@ -255,94 +210,6 @@
         </div>
     </div>
 </div>
-
-
-<!-- footer ends here -->
-     
-       
   </body>
-  <script>
-    // Write all necessery JS here 
-    let Cart =JSON.parse(localStorage.getItem('cart'))
-     let container=document.getElementById('cart-container')
-
-    function displayData(){
-       container.innerHTML=''
-      Cart.forEach((ele)=>{
-        let card=document.createElement('div')
-
-        let image=document.createElement('img')
-        let brand=document.createElement('h2')
-        let category=document.createElement('h4')
-        let price=document.createElement('h3')
-        let detail=document.createElement('p')
-        let addtocart=document.createElement('button')
-        let increase=document.createElement('button')
-        let decrease=document.createElement('button')
-        let quantity=document.createElement('span')
-
-        image.setAttribute('src',ele.img)
-        brand.innerText=ele.brand
-        category.innerText=ele.category
-        price.innerText='₹'+ele.price
-        detail.innerText=ele.details
-        addtocart.innerText='Remove'
-        increase.innerText='+'
-        decrease.innerText='-'
-        quantity.innerText=ele.quantity
-
-        addtocart.addEventListener('click',()=>{
-          Cart=Cart.filter((element)=>{
-            return element.id!=ele.id
-          })
-          localStorage.setItem('cart',JSON.stringify(Cart))
-          displayData()
-        })
-        
-        increase.addEventListener('click',()=>{
-          Cart=Cart.map((element)=>{
-            if(element.id==ele.id){
-              ele.quantity++
-              return element
-            }else{
-              return element
-            }
-          })
-          localStorage.setItem('cart',JSON.stringify(Cart))
-          displayData()
-        })
-
-        decrease.addEventListener('click',()=>{
-          Cart=Cart.map((element)=>{
-            if(element.id==ele.id&&element.quantity>1){
-              ele.quantity--
-              return element
-            }else{
-              return element
-            }
-          })
-          localStorage.setItem('cart',JSON.stringify(Cart))
-          displayData()
-        })
-
-
-
-        let sum=0
-        for(let i=0; i<Cart.length; i++){
-          if(Cart==''){
-            sum=0
-          }else{
-            sum+=Cart[i].price*Cart[i].quantity
-          }
-          
-        }
-        document.getElementById('cart-total').innerText=`$`+' '+ sum
-        card.append(image,brand,price,category,increase,quantity, decrease,addtocart)
-        container.append(card)
-
-      })
-      // console.log('display',data)
-    }
-      displayData()
-  </script>
+  <script src="Cart.js"></script>
 </html>

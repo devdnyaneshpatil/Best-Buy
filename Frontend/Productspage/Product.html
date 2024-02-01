@@ -5,63 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="footer.css">
-    <style>
-      /* Write all necessery css here  */
-      #product-container{
-        /* border: 2px solid red; */
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap: 10px;
-        
-      }
-      #product-container>div{
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        padding: 20px;
-        text-align: center;
-
-      }
-      #product-container>div>img{
-        width: 50%;
-      }
-      #product-container>div>button{
-        display: block;
-        margin: auto
-      }
-      #filter{
-        display: flex;
-        /* flex-direction: row-revers; */
-        /* margin: auto; */
-        margin-bottom: 10px;
-        margin-top: 10px;
-      }
-      .nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      }
-      .cartButton{
-    border:1px solid blue;
-        color: black;
-        /* margin-left: 20px; */
-        margin-top: 2px;
-        padding: 10px;
-        background-color: yellow;
-        border-radius: 5px;
-        font-weight: bold;
-        display: block;
-      width: 200px;
-      border: none;
-}
-    #h2div{
-        margin-top: 100px;
-    }
-    img{
-        width: 200px;
-    }
-    </style>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="Product.css">
   </head>
 
   <body>
@@ -271,84 +217,6 @@
     </div>
     <!-- footer end here -->
   </body>
-  <script>
-    // Write all necessery JS here
-    const url='https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products'
-
-    async function fetchData(){
-      try {
-        let res=await fetch(url)
-        res=await res.json()
-        // console.log(res.data)
-        filterData(res.data)
-      } catch (error) {
-        console.log('error',error)
-      }
-    }
-     
-    fetchData()
-    let filterby=document.getElementById('filter')
-    filterby.addEventListener('change',()=>{
-      fetchData()
-    })
-    function filterData(data){
-     if(filterby.value==""){
-      displayData(data)
-     }else{
-      data=data.filter((ele)=>{
-        return ele.category==filterby.value
-      })
-      displayData(data)
-     }
-    }
-
-       let Cart=JSON.parse(localStorage.getItem('cart'))||[]
-
-     let container=document.getElementById('product-container')
-    function displayData(data){
-       container.innerHTML=''
-      data.forEach((ele)=>{
-        let card=document.createElement('div')
-
-        let image=document.createElement('img')
-        let brand=document.createElement('h2')
-        let category=document.createElement('h4')
-        let price=document.createElement('h3')
-        let detail=document.createElement('p')
-        let addtocart=document.createElement('button')
-
-        image.setAttribute('src',ele.img)
-        brand.innerText=ele.brand
-        category.innerText=ele.category
-        price.innerText='₹'+ele.price
-        detail.innerText=ele.details
-        addtocart.innerText='Add To Cart'
-        addtocart.setAttribute("class","cartButton")
-
-        addtocart.addEventListener('click',()=>{
-          if(checkDuplicate(ele)){
-            alert('Product Aready In The Cart')
-          }else{
-            Cart.push({...ele,quantity:1})
-            localStorage.setItem('cart',JSON.stringify(Cart))
-            alert('Product Added To Cart')
-          }
-        })
-
-        card.append(image,brand,price,category,addtocart)
-        container.append(card)
-
-      })
-      console.log('display',data)
-    }
-
-    function checkDuplicate(ele){
-       for(let i=0; i<Cart.length; i++){
-        if(Cart[i].id==ele.id){
-          return true
-        }
-       }
-      return false
-    }
-  </script>
+  
 </html>
+<script src="Product.js"></script>

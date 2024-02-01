@@ -1,0 +1,41 @@
+#mainDiv {
+  display: flex;
+  margin-top: 100px;
+}
+#mainDiv > div:nth-child(1) {
+  width: 75%;
+}
+#mainDiv > div:nth-child(2) {
+  /* width: 20%; */
+  /* border: 1px solid gray; */
+  margin-left: 100px;
+}
+#cart-container {
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+#cart-container > div {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  text-align: center;
+}
+#cart-container > div > img {
+  width: 70%;
+}
+#cart-container > div > button {
+  /* display: block;
+        margin: auto */
+  margin-left: 5px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#cart-total {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="Login.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script> -->
+  </head>
+  <body>
+    <div id="NavbarMainDiv">
+      <img
+        src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/best-buy-co-inc-logo.png?v=20221104134121&w=240&h=240&zc=2"
+        alt=""
+      />
+      <a href="index.html">Return to previous page</a>
+    </div>
+    <div id="showDiv"></div>
+    <div id="container">
+      <form action="" id="form">
+        <h3>Sign In to Best Buy</h3>
+        <!-- <label for="">mobile phone number</label> -->
+        <input type="email" placeholder="Enter Your Email" id="email" />
+
+        <input type="password" placeholder="Enter Password" id="pass" />
+        <div style="display: flex; align-items: center; margin-top: 0px">
+          <input type="checkbox" placeholder="Show Text" onclick="showPass()" />
+          <h5>Show Password</h5>
+        </div>
+        <a
+          style="text-align: left; margin-bottom: 20px; margin-top: 10px"
+          href=""
+          >Forget Your Password?</a
+        >
+        <!-- <p id="para1">Enter Password</p> -->
+        <input type="submit" value="Sign In" id="submit" />
+      </form>
+      <p>
+        By continuing, you agree to our Term & Conditions,our Privacy Policy,
+        and the My Best Buy® Program Terms.
+      </p>
+      <hr />
+      <h4>
+        Don't have an account?<a href="./Signup.html">Create an account</a>
+      </h4>
+    </div>
+  </body>
+</html>
+<script src="Login.js"></script>
