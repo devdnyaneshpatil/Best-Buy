@@ -48,3 +48,15 @@
 img {
   width: 200px;
 }
+#sort-container{
+  width: 400px;
+  /* border: 2px solid black; */
+  height: 50px;
+}
+#sort{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 25px;
+}

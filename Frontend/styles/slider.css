@@ -1,0 +1,60 @@
+.slide {
+  overflow: hidden;
+}
+.slider {
+  position: relative;
+  animation-name: slideranimation;
+  animation-duration: 20s;
+  width: 6750px;
+  animation-iteration-count: infinite;
+}
+.slider img {
+  position: relative;
+  width: 100%;
+}
+.slider p {
+  position: absolute;
+  z-index: 1;
+  left: 30px;
+  top: 30px;
+  font-size: 100px;
+  color: white;
+}
+
+.slider div {
+  width: 1350px;
+  height: 200px;
+  float: left;
+}
+@keyframes slideranimation {
+  0% {
+    left: 0px;
+  }
+  15% {
+    left: 0px;
+  }
+  20% {
+    left: -1350px;
+  }
+  35% {
+    left: -1350px;
+  }
+  40% {
+    left: -2700px;
+  }
+  55% {
+    left: -2700px;
+  }
+  60% {
+    left: -4050px;
+  }
+  75% {
+    left: -4050px;
+  }
+  80% {
+    left: -5400px;
+  }
+  95% {
+    left: -5400px;
+  }
+}

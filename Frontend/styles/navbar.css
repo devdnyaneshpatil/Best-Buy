@@ -9,6 +9,7 @@
     color: white;
     position: fixed;
     top: 0;
+    z-index: 10;
     margin-top: 1px;
     margin-left: -8px;
 }
@@ -84,4 +85,8 @@ a>b{
 }
 #NavbarMainDiv>div:nth-child(2) div{
     cursor: pointer;
+}
+#cart{
+    font-size: 25px;
+    color:whitesmoke ;
 }

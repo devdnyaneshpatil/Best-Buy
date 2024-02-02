@@ -101,3 +101,18 @@ searchEl.addEventListener("keyup",(e)=>{
 })
 
 
+//sort functionality
+let sortSelect = document.getElementById("sort");
+sortSelect.addEventListener("change", async() => {
+   const sortOrder = sortSelect.value;
+   const sortUrl = `http://localhost:8080/products?category=${page}&sort=price&order=${sortOrder}`;
+   try {
+    let res = await fetch(sortUrl);
+    let response = await res.json();
+    displayData(response.msg);
+  } catch (error) {
+    console.log("error", error);
+  }
+});
+
+

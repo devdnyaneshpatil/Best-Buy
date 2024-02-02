@@ -1,3 +1,5 @@
+
+
 function newWindow1() {
   window.location.assign("https://www.bestbuy.com/");
 }
@@ -22,6 +24,20 @@ window.addEventListener("DOMContentLoaded", function () {
   if(user){
     let accEl=this.document.getElementById("account")
     accEl.innerText=user.name
+    fetch("http://localhost:8080/users/cart",{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json",
+        "authorization":`Bearer ${user.token}`
+      }
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+      this.document.getElementById("cart").innerText=`(${data.msg.length})`
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
   }
 });
 
