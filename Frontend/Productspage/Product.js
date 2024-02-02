@@ -1,3 +1,8 @@
+
+
+
+
+
 const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -80,5 +85,19 @@ function displayData(data) {
   });
 }
 
-//function to add item to card
+
+//search functionality
+let searchEl=document.getElementById("search")
+
+searchEl.addEventListener("keyup",(e)=>{
+  fetch(`http://localhost:8080/products?category=${page}&search=${e.target.value}`)
+  .then((res)=>res.json())
+  .then((data)=>{
+    displayData(data.msg)
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+})
+
 

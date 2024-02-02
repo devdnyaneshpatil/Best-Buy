@@ -78,3 +78,5 @@ function removeCartItem(productId) {
     })
     .catch((error) => console.log(error.message));
 }
+
+
