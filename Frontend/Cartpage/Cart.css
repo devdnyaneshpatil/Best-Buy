@@ -28,6 +28,11 @@
   /* display: block;
         margin: auto */
   margin-left: 5px;
+  color: black;
+  background-color: yellow;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
 }
 .nav {
   display: flex;

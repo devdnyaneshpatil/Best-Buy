@@ -66,7 +66,6 @@ function displayData(data) {
           .then((res) => res.json())
           .then((data) => {
             alert(data.msg);
-            addtocart.innerText = "Remove From Cart";
           })
           .catch((error) => console.log(error));
       } else {
@@ -83,4 +82,3 @@ function displayData(data) {
 
 //function to add item to card
 
-const addToCart = (id) => {};

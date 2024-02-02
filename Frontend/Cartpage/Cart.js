@@ -1,9 +1,5 @@
-// Write all necessery JS here
-
 const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-if (userInfo) {
-  alert("Welcome to the cart");
-} else {
+if (!userInfo) {
   alert("Best Buy Says\nLogin First");
   window.location.href = "../Authentication/login.html";
 }
@@ -20,86 +16,65 @@ fetch("http://localhost:8080/users/cart", {
     displayData(data.msg);
   })
   .catch((error) => console.log(error));
+
 let container = document.getElementById("cart-container");
 
-function displayData(Cart) {
+function displayData(cart) {
   container.innerHTML = "";
-  Cart.forEach((ele) => {
+  let sum = 0;
+
+  cart.forEach((ele) => {
     let card = document.createElement("div");
+    card.setAttribute("data-id", ele._id);
 
     let image = document.createElement("img");
     let title = document.createElement("h2");
     let category = document.createElement("h4");
     let price = document.createElement("h3");
-    let desc = document.createElement("p");
-    let addtocart = document.createElement("button");
-    let increase = document.createElement("button");
-    let decrease = document.createElement("button");
-    // let quantity = document.createElement("span");
+    let removeFromCart = document.createElement("button");
+    let buyOrder = document.createElement("button");
 
     image.setAttribute("src", ele.img);
     title.innerText = ele.title;
     category.innerText = ele.category;
     price.innerText = "₹" + ele.price;
-    desc.innerText = ele.description;
-    addtocart.innerText = "Remove";
-    increase.innerText = "+";
-    decrease.innerText = "-";
-    // quantity.innerText = ele.quantity;
 
-    // addtocart.addEventListener("click", () => {
-    //   Cart = Cart.filter((element) => {
-    //     return element.id != ele.id;
-    //   });
-    //   localStorage.setItem("cart", JSON.stringify(Cart));
-    //   displayData();
-    // });
+    removeFromCart.innerText = "Remove";
+    buyOrder.innerText='Buy Item'
+    removeFromCart.addEventListener("click", () => removeCartItem(ele._id));
 
-    // increase.addEventListener("click", () => {
-    //   Cart = Cart.map((element) => {
-    //     if (element.id == ele.id) {
-    //       ele.quantity++;
-    //       return element;
-    //     } else {
-    //       return element;
-    //     }
-    //   });
-    //   localStorage.setItem("cart", JSON.stringify(Cart));
-    //   displayData();
-    // });
+    sum += ele.price; // Assuming price is a number
 
-    // decrease.addEventListener("click", () => {
-    //   Cart = Cart.map((element) => {
-    //     if (element.id == ele.id && element.quantity > 1) {
-    //       ele.quantity--;
-    //       return element;
-    //     } else {
-    //       return element;
-    //     }
-    //   });
-    //   localStorage.setItem("cart", JSON.stringify(Cart));
-    //   displayData();
-    // });
-
-    let sum = 0;
-    for (let i = 0; i < Cart.length; i++) {
-      if (Cart == "") {
-        sum = 0;
-      } else {
-        sum += Cart[i].price * Cart[i].quantity;
-      }
-    }
-    document.getElementById("cart-total").innerText = `$` + " " + sum;
-    card.append(
-      image,
-      title,
-      price,
-      category,
-      increase,
-      decrease,
-      addtocart
-    );
+    card.append(image, title, price, category, removeFromCart,buyOrder);
     container.append(card);
   });
-  // console.log('display',data)
+
+  document.getElementById("cart-total").innerText = `₹${sum.toFixed(2)}`;
+}
+
+function removeCartItem(productId) {
+  fetch(`http://localhost:8080/users/removeFromCart/${productId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+      authorization: `Bearer ${userInfo.token}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      alert(data.msg)
+      fetch("http://localhost:8080/users/cart", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${userInfo.token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          displayData(data.msg);
+        })
+        .catch((error) => console.log(error));
+    })
+    .catch((error) => console.log(error.message));
 }
