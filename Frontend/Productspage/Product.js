@@ -1,6 +1,7 @@
+const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
 const urlParams = new URLSearchParams(window.location.search);
 const page = urlParams.get("page");
-console.log(page);
 
 const url = `http://localhost:8080/products?category=${page}`;
 
@@ -36,43 +37,50 @@ function displayData(data) {
   container.innerHTML = "";
   data.forEach((ele) => {
     let card = document.createElement("div");
-
+    card.setAttribute("data-id", ele._id);
     let image = document.createElement("img");
-    let brand = document.createElement("h2");
+    let title = document.createElement("h2");
     let category = document.createElement("h4");
     let price = document.createElement("h3");
     let detail = document.createElement("p");
     let addtocart = document.createElement("button");
 
     image.setAttribute("src", ele.img);
-    brand.innerText = ele.brand;
+    title.innerText = ele.title;
     category.innerText = ele.category;
     price.innerText = "₹" + ele.price;
-    detail.innerText = ele.details;
+    detail.innerText = ele.description;
     addtocart.innerText = "Add To Cart";
     addtocart.setAttribute("class", "cartButton");
 
     addtocart.addEventListener("click", () => {
-      if (checkDuplicate(ele)) {
-        alert("Product Aready In The Cart");
+      let proId=card.getAttribute("data-id")
+      if (userInfo) {
+        fetch(`http://localhost:8080/users/addToCart/${proId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${userInfo.token}`,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert(data.msg);
+            addtocart.innerText = "Remove From Cart";
+          })
+          .catch((error) => console.log(error));
       } else {
-        Cart.push({ ...ele, quantity: 1 });
-        localStorage.setItem("cart", JSON.stringify(Cart));
-        alert("Product Added To Cart");
+        alert(
+          "Best Buy Says\nYou have to login first to add this item to cart"
+        );
       }
     });
 
-    card.append(image, brand, price, category, addtocart);
+    card.append(image, title, price, category, addtocart);
     container.append(card);
   });
-  console.log("display", data);
 }
 
-function checkDuplicate(ele) {
-  for (let i = 0; i < Cart.length; i++) {
-    if (Cart[i].id == ele.id) {
-      return true;
-    }
-  }
-  return false;
-}
+//function to add item to card
+
+const addToCart = (id) => {};
