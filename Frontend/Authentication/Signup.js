@@ -19,22 +19,22 @@ formEl.addEventListener("submit", (e) => {
     email,
     password
   }
-  fetch("http://localhost:8080/users/register",{
-    method:"POST",
-    headers:{
-        "Content-type":"application/json"
+  fetch("https://bestbuy.onrender.com/users/register", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
     },
-    body:JSON.stringify(payload)
+    body: JSON.stringify(payload),
   })
-  .then((res)=>res.json())
-  .then((data)=>{
-    alert(`Best Buy Says\n${data.msg}`)
-    if(data.msg==="User Has Been Added Successfully!"){
-        localStorage.setItem("userInfo",JSON.stringify(data.user))
-        window.location.href="../index.html"
-    }
-  })
-  .catch((error)=>{
-    console.log(error)
-  })
+    .then((res) => res.json())
+    .then((data) => {
+      alert(`Best Buy Says\n${data.msg}`);
+      if (data.msg === "User Has Been Added Successfully!") {
+        localStorage.setItem("userInfo", JSON.stringify(data.user));
+        window.location.href = "../index.html";
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });

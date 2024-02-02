@@ -8,7 +8,7 @@ const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 const urlParams = new URLSearchParams(window.location.search);
 const page = urlParams.get("page");
 
-const url = `http://localhost:8080/products?category=${page}`;
+const url = `https://bestbuy.onrender.com/products?category=${page}`;
 
 async function fetchData() {
   try {
@@ -61,7 +61,7 @@ function displayData(data) {
     addtocart.addEventListener("click", () => {
       let proId=card.getAttribute("data-id")
       if (userInfo) {
-        fetch(`http://localhost:8080/users/addToCart/${proId}`, {
+        fetch(`https://bestbuy.onrender.com/users/addToCart/${proId}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -90,14 +90,16 @@ function displayData(data) {
 let searchEl=document.getElementById("search")
 
 searchEl.addEventListener("keyup",(e)=>{
-  fetch(`http://localhost:8080/products?category=${page}&search=${e.target.value}`)
-  .then((res)=>res.json())
-  .then((data)=>{
-    displayData(data.msg)
-  })
-  .catch((error)=>{
-    console.log(error)
-  })
+  fetch(
+    `https://bestbuy.onrender.com/products?category=${page}&search=${e.target.value}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      displayData(data.msg);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 })
 
 
@@ -105,7 +107,7 @@ searchEl.addEventListener("keyup",(e)=>{
 let sortSelect = document.getElementById("sort");
 sortSelect.addEventListener("change", async() => {
    const sortOrder = sortSelect.value;
-   const sortUrl = `http://localhost:8080/products?category=${page}&sort=price&order=${sortOrder}`;
+   const sortUrl = `https://bestbuy.onrender.com/products?category=${page}&sort=price&order=${sortOrder}`;
    try {
     let res = await fetch(sortUrl);
     let response = await res.json();

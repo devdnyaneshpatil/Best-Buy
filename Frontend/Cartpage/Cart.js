@@ -4,7 +4,7 @@ if (!userInfo) {
   window.location.href = "../Authentication/login.html";
 }
 
-fetch("http://localhost:8080/users/cart", {
+fetch("https://bestbuy.onrender.com/users/cart", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
@@ -53,7 +53,7 @@ function displayData(cart) {
 }
 
 function removeCartItem(productId) {
-  fetch(`http://localhost:8080/users/removeFromCart/${productId}`, {
+  fetch(`https://bestbuy.onrender.com/users/removeFromCart/${productId}`, {
     method: "PATCH",
     headers: {
       "Content-type": "application/json",
@@ -62,8 +62,8 @@ function removeCartItem(productId) {
   })
     .then((res) => res.json())
     .then((data) => {
-      alert(data.msg)
-      fetch("http://localhost:8080/users/cart", {
+      alert(data.msg);
+      fetch("https://bestbuy.onrender.com/users/cart", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
